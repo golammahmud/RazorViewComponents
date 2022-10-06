@@ -15,9 +15,19 @@ namespace BasicRazorViewComponents.Services
             return GetListData<UserDetails>($"EXEC spGetAllEmployeesWithDepartmentNames");
         }
 
+        public Employee GetEmployeeById(int Id)
+        {
+            return GetRowData<Employee>($"EXEC spGetEmployeeById {Id}");
+        }
+
         public IList<GroupByAddressDTO> GetGroupByAddressEmployeesNumber()
         {
             return GetListData<GroupByAddressDTO>($"EXEC spGetEmployeeByAddress");
+        }
+
+        public IList<TableRowCountDTO> GetTotalTableRowCount()
+        {
+            return GetListData<TableRowCountDTO>($" Exec spGetAllTableEntryNumbers");
         }
     }
 }

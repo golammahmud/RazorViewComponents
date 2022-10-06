@@ -7,5 +7,7 @@ namespace BasicRazorViewComponents.Services
         IList<UserDetails> GetAllEmployees();
 
         IList<GroupByAddressDTO> GetGroupByAddressEmployeesNumber();
+        IList<TableRowCountDTO> GetTotalTableRowCount();
+        Employee GetEmployeeById(int Id);
     }
 }

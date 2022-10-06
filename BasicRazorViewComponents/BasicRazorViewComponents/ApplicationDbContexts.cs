@@ -17,6 +17,7 @@ namespace BasicRazorViewComponents
           
             modelBuilder.Entity<UserDetails>().HasNoKey().ToView("UserDetails");
             modelBuilder.Entity<GroupByAddressDTO>().HasNoKey().ToView("GroupByAddressDTO");
+            modelBuilder.Entity<TableRowCountDTO>().HasNoKey().ToView("TableRowCountDTO");
             base.OnModelCreating(modelBuilder);
 
         }

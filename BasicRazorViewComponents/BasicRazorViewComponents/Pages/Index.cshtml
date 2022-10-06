@@ -1,8 +1,12 @@
-﻿@page
+﻿@page "{Id?}"
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-   
+
+}
+@if (Model.Employee != null)
+{
+    <h1 class="center py-3">Employee Name:@Model.Employee.Name</h1>
 }
 
 <div class="text-center">
@@ -11,7 +15,7 @@
 </div>
 <div class="text-center">
     <h1 class="display-4">data from linq query</h1>
-   <table class="table table-bordered table-responsive">
+    <table class="table table-bordered table-responsive">
         <thead>
             <tr>
                 <th>Id</th>
@@ -26,8 +30,8 @@
                     <td>@item.Id</td>
                     <td>@item.EmployeeName</td>
                     <td>@item.DepartmentName</td>
-                    
-                    
+
+
                 </tr>
             }
         </tbody>

@@ -2,7 +2,7 @@
 @model IList<UserDetails>
 
 @{
-    var items=ViewData["Data"];
+    var items = ViewData["Data"];
 
 }
 <div class="container bg-gradient">
@@ -26,7 +26,8 @@
             }
         </tbody>
     </table>
-     <table class="table table-bordered table-responsive">
+    <h4>Group by Id</h4>
+    <table class="table table-bordered table-responsive">
         <thead>
             <tr>
                 <th>Id</th>
@@ -44,5 +45,28 @@
         </tbody>
     </table>
 
+
+</div>
+
+<div class="container">
+    <h4>Total Table row Count</h4>
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                
+                <th>EmployeeCount</th>
+                 <th>DepartmentCount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var num in @ViewBag.RowCount)
+            {
+                <tr>
+                    <td>@num.TotalEmployee</td>
+                    <td>@num.TotalDepartment</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
 </div>

@@ -22,7 +22,9 @@ namespace BasicRazorViewComponents.Components.User
         {
             var result = m_Employee.GetAllEmployees();
             var address=m_Employee.GetGroupByAddressEmployeesNumber();
-           ViewBag.Address = address;
+            var TableRowCount = m_Employee.GetTotalTableRowCount();
+            ViewBag.RowCount = TableRowCount;
+            ViewBag.Address = address;
             return View(result);
         }
     }
